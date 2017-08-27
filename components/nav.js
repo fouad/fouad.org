@@ -1,44 +1,42 @@
 import Link from 'next/link'
 
 const links = [
-  // { href: 'https://github.com/fouad', label: 'Github' }
+  { href: '/', label: 'Writing' },
+  { href: '/about', label: 'About' },
+  { href: '/work', label: 'Work' },
+  { href: '/contact', label: 'Contact' }
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
 })
 
-const Nav = ({ back }) => (
+const Nav = ({ back }) =>
   <nav>
     <ul>
-      <li>
-        {back ? (
-          <Link prefetch href='/'>
-            <a>&larr; Back Home</a>
+      <li className="logo">
+        <h1>
+          <Link prefetch href="/">
+            <a>fouad</a>
           </Link>
-        ) : (
-          <Link prefetch href='/'>
-            <a>Home</a>
-          </Link>
-        )}
+        </h1>
       </li>
-      <ul>
-        {links.map(
-          ({ key, href, label }) => (
-            <li key={key}>
-              <Link href={href}>
-                <a>{label}</a>
-              </Link>
-            </li>
-          )
-        )}
-      </ul>
+      {links.map(({ key, href, label }) =>
+        <li key={key} className="link">
+          <Link prefetch href={href}>
+            <a>
+              {label}
+            </a>
+          </Link>
+        </li>
+      )}
     </ul>
 
     <style jsx>{`
       :global(body) {
         background: #f8fbfd;
         margin: 0;
-        font-family: Segment Circular Std,Helvetica Neue,Helvetica,Arial,sans-serif;
+        font-family: Segment Circular Std, Helvetica Neue, Helvetica, Arial,
+          sans-serif;
         font-size: 18px;
         font-weight: 400;
         line-height: 30px;
@@ -50,12 +48,44 @@ const Nav = ({ back }) => (
       nav {
         text-align: center;
       }
-      ul {
+      @media (min-width: 1040px) {
+        nav {
+          position: fixed;
+          top: 0;
+          z-index: 10;
+        }
+      }
+      & > ul {
         display: flex;
         justify-content: space-between;
       }
       nav > ul {
         padding: 4px 16px;
+      }
+      nav > ul {
+        display: flex;
+        flex-direction: column;
+      }
+      .logo {
+        margin-bottom: 12px;
+      }
+      .link a {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: #aab9c6;
+      }
+      .link a:hover,
+      .link a:focus {
+        color: #067df7;
+      }
+      @media(max-width: 880px) {
+        .logo h1,
+        .link a {
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
       li {
         display: flex;
@@ -80,8 +110,9 @@ const Nav = ({ back }) => (
         width: 0;
         height: 2px;
         background: #0189ff;
-        transform: translate3d(0,0,0);
-        transition: background .3s ease-out, opacity .3s ease-out, width .3s ease-out;
+        transform: translate3d(0, 0, 0);
+        transition: background .3s ease-out, opacity .3s ease-out,
+          width .3s ease-out;
       }
       :global(a.animated:hover::after) {
         width: 100%;
@@ -104,8 +135,16 @@ const Nav = ({ back }) => (
         animation-fill-mode: both;
         transition: opacity .15s ease-out, transform .15s ease-out;
       }
+      h1 {
+        margin: 48px 0 0;
+        font-family: Georgia;
+        font-weight: 300;
+      }
+      h1 a {
+        color: #333;
+        font-size: 48px;
+      }
     `}</style>
   </nav>
-)
 
 export default Nav

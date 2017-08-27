@@ -44,6 +44,9 @@ function toSlug(text) {
     .replace(/-+$/, '')
 }
 
-export default () => md(markdown)`
-# options
-`
+export const code = {
+  start: '```',
+  end: '```'
+}
+
+export default () => md(markdown)``

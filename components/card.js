@@ -1,16 +1,15 @@
-import Head from './head'
-import Nav from './nav'
+import cx from 'classnames'
 
-export default ({ title, children, style }) => (
-  <div>
-    <Head title={title} />
-
-    <Nav back />
-
-    <div className='post slideInUp' style={style}>{children}</div>
+export default ({ children, style, row, spaceBetween }) => (
+  <div className={cx({
+    'card slideInUp': true,
+    row,
+    spaceBetween
+  })} style={style}>
+    {children}
 
     <style jsx>{`
-      .post {
+      .card {
         display: block;
         width: 100%;
         max-width: 620px;
@@ -21,26 +20,26 @@ export default ({ title, children, style }) => (
         box-sizing: border-box;
         font-size: 16px;
       }
-      .post :global(h1),
-      .post :global(h2),
-      .post :global(h3),
-      .post :global(h4),
-      .post :global(h5) {
+      .card :global(h1),
+      .card :global(h2),
+      .card :global(h3),
+      .card :global(h4),
+      .card :global(h5) {
         color: #293C4B;
         font-weight: 400;
         max-width: 80%;
         line-height: 44px;
       }
-      .post :global(h1) {
+      .card :global(h1) {
         font-weight: 700;
         color: #00376e;
       }
-      .post :global(p) {
+      .card :global(p) {
         line-height: 30px;
         font-weight: 400;
       }
       @media(min-width: 767px) {
-        .post {
+        .card {
           width: 98%;
           max-width: 740px;
           padding: 32px 72px;
@@ -48,13 +47,20 @@ export default ({ title, children, style }) => (
           border-radius: 6px;
           overflow: hidden;
         }
-        .post :global(h1),
-        .post :global(h2),
-        .post :global(h3),
-        .post :global(h4),
-        .post :global(h5) {
+        .card :global(h1),
+        .card :global(h2),
+        .card :global(h3),
+        .card :global(h4),
+        .card :global(h5) {
           max-width: 90%;
         }
+      }
+      .row {
+        display: flex;
+        flex-direction: row;
+      }
+      .spaceBetween {
+        justify-content: space-between;
       }
     `}</style>
   </div>

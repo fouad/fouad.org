@@ -25,6 +25,7 @@ const Head = (props) => (
     <meta property='og:image:width' content='1200' />
     <meta property='og:image:height' content='630' />
     <link rel='stylesheet' href='https://static.segment.com/fonts/index.css' />
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.5/css/tachyons.min.css" />
   </NextHead>
 )
 
