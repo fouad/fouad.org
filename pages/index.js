@@ -7,7 +7,7 @@ const posts = [
   //   url: 'posts/building-non-technical-database-with-airtable/',
   //   title: 'Building a Non-Technical Database with Airtable',
   //   time: 'Aug 2017',
-  //   category: 'code'
+  //   category: 'engineering'
   // },
   // {
   //   url: 'posts/using-monaco-editor-with-webpack-and-react/',
@@ -160,11 +160,11 @@ export default () =>
         border-radius: 4px;
         box-sizing: border-box;
       }
-      .card label.code {
-        background: #00e676;
+      .card label.engineering {
+        background: #49b882;
       }
       .card label.design {
-        background: #9c27b0;
+        background: #e365a6;
       }
       .card label.politics {
         background: #7c4dff;

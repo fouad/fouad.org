@@ -39,6 +39,11 @@ export default ({ title, children, style }) => (
         line-height: 30px;
         font-weight: 400;
       }
+      .post :global(code),
+      .post :global(pre) {
+        font-size: 12px;
+        line-height: 20px;
+      }
       @media(min-width: 767px) {
         .post {
           width: 98%;

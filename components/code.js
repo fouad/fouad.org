@@ -3,7 +3,9 @@ import style from 'react-syntax-highlighter/dist/styles/atelier-lakeside-light'
 import { string } from 'prop-types'
 
 export const Code = ({ lang, children }) =>
-  <SyntaxHighlighter language={lang} style={style}>{children.trim()}</SyntaxHighlighter>
+  <SyntaxHighlighter language={lang} style={style}>
+    {children.trim()}
+  </SyntaxHighlighter>
 
 Code.defaultProps = {
   lang: ''

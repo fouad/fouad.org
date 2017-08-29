@@ -62,6 +62,11 @@ export default ({ children, style, row, spaceBetween }) => (
       .spaceBetween {
         justify-content: space-between;
       }
+      @media(max-width: 767px) {
+        .row {
+          flex-wrap: wrap;
+        }
+      }
     `}</style>
   </div>
 )
