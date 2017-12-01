@@ -7,6 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@segment/snippet": "^4.0.1",
     "classnames": "^2.2.5",
     "invariant": "^2.2.2",
     "next": "^3",

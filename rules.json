@@ -1,0 +1,6 @@
+{
+  "rules": [
+    { "pathname": "/api/github/trending", "dest": "github-trending.now.sh" },
+    { "dest": "fouad-org.now.sh" }
+  ]
+}
